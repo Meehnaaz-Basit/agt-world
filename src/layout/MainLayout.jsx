@@ -3,7 +3,7 @@ import Navbar from "../shared/Navbar";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="font-custom">
       <div>
         <Navbar></Navbar>
       </div>

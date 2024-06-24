@@ -1,35 +1,29 @@
+import { IoMdArrowDropdown } from "react-icons/io";
+import { MdGroupAdd } from "react-icons/md";
+import PostTab from "./tab/PostTab";
+import PostCard from "./postCards/PostCard";
+// images
+import postImage1 from "./../../assets/post.png";
+import userImage from "./../../assets/Rectangle 3.png";
+import postImage2 from "./../../assets/Rectangle 5.png";
+
 const Posts = () => {
   return (
-    <div>
+    <div className="mt-6">
       {/* post tabs and bth */}
       <div className="flex justify-between">
         {/*  */}
-        <div>
-          <div role="tablist" className="tabs">
-            <a role="tab" className="tab">
-              All Posts(32)
-            </a>
-            <a role="tab" className="tab tab-active">
-              Article
-            </a>
-            <a role="tab" className="tab">
-              Event
-            </a>
-            <a role="tab" className="tab">
-              Education
-            </a>
-            <a role="tab" className="tab">
-              Job
-            </a>
-          </div>
+        <div className="">
+          <PostTab></PostTab>
         </div>
+
         {/*  */}
         <div className="flex gap-3">
           {/*  */}
           <div>
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="btn m-1">
-                Click
+                Write A Post <IoMdArrowDropdown />
               </div>
               <ul
                 tabIndex={0}
@@ -46,14 +40,42 @@ const Posts = () => {
           </div>
           {/*  */}
           <div>
-            <button className="btn">Join Group</button>
+            <button className="btn">
+              {" "}
+              <MdGroupAdd /> Join Group
+            </button>
           </div>
         </div>
       </div>
       {/* post tabs and bth */}
 
       {/* post and recommended group */}
-      <div></div>
+      <div className="flex">
+        <div className="basis-2/3 ">
+          {/* card */}
+          <PostCard
+            postImg={postImage1}
+            category="✍️ Article"
+            title="What if famous brands had regular fonts? Meet RegulaBrands!"
+            paragraph="I’ve worked in UX for the better part of a decade. From now on, I
+              plan to rei…"
+            userImg={userImage}
+            userName="Sarthak Kamra"
+            viewCount="1.4k"
+          ></PostCard>
+          <PostCard
+            postImg={postImage2}
+            category="🔬️ Education"
+            title="Tax Benefits for Investment under National Pension Scheme launched by Government"
+            paragraph="I’ve worked in UX for the better part of a decade. From now on, I
+              plan to rei…"
+            userImg={userImage}
+            userName="Sarah West"
+            viewCount="1.4k"
+          ></PostCard>
+        </div>
+        <div className="basis-1/3 bg-blue-500 h-96"></div>
+      </div>
     </div>
   );
 };
